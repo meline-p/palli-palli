@@ -1,0 +1,308 @@
+:root {
+  --color-pink: #ff007a;
+  --color-green: #ccff00;
+  --color-purple: #7000ff;
+  --color-black: #050505;
+  --color-white: #fff;
+  --color-dark-purple: #1a003b;
+
+  --color-rgb-pink: 255, 0, 122;
+  --color-rgb-green: 204, 255, 0;
+  --color-rgb-purple: 112, 0, 255;
+  --color-rgb-black: 5, 5, 5;
+  --color-rgb-white: 255, 255, 255;
+
+  --btn-padding-x: 1.5rem; /* px-6 */
+  --btn-padding-y: 0.6rem; /* py-3 */
+  --btn-radius: 0.5rem; /* rounded-lg */
+  --btn-font-weight: 700; /* font-bold */
+}
+
+/*************************************/
+/************* GENERAL ***************/
+/*************************************/
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 16px;
+}
+
+/*** TITRES ***/
+.font-h1-clamp {
+  font-size: clamp(32px, 6vw, 96px);
+  line-height: clamp(45px, 6vw, 100px);
+}
+
+.font-h2-clamp {
+  font-size: clamp(24px, 4vw, 48px);
+}
+
+.font-h3-clamp {
+  font-size: clamp(20px, 3vw, 32px);
+}
+
+.font-brand-clamp {
+  font-size: clamp(24px, 2.5vw, 36px);
+}
+
+.font-brand-korean-clamp {
+  font-size: clamp(20px, 2vw, 24px);
+}
+
+.font-menu-price-clamp {
+  font-size: clamp(20px, 2vw, 24px);
+}
+
+/*** BOUTONS ***/
+.pink-btn {
+  font-style: italic;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border-radius: var(--btn-radius);
+  font-weight: var(--btn-font-weight);
+  color: var(--color-white);
+  background-color: var(--color-pink);
+  border: 1px solid var(--color-pink);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.pink-btn:hover {
+  background-color: var(--color-purple);
+  border: 1px solid var(--color-purple);
+}
+
+.green-outline-btn {
+  font-style: italic;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border-radius: var(--btn-radius);
+  font-weight: var(--btn-font-weight);
+  color: var(--color-green);
+  border: 1px solid var(--color-green);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.green-outline-btn:hover {
+  color: var(--color-black);
+}
+
+/*** NEON EFFECT ***/
+.text-pink-neon-60 {
+  text-shadow: 0 0 10px rgba(var(--color-rgb-pink), 100);
+}
+.text-green-neon-60 {
+  text-shadow: 0 0 10px rgba(var(--color-rgb-green), 100);
+}
+.text-purple-neon-60 {
+  text-shadow: 0 0 10px rgba(var(--color-rgb-purple), 100);
+}
+
+.box-green-neon-100 {
+  box-shadow: 0 0 10px rgba(var(--color-rgb-green), 100);
+}
+.box-purple-neon-100 {
+  box-shadow: 0 0 10px rgba(var(--color-rgb-purple), 100);
+}
+
+/******************************************/
+/************* HERO SECTION ***************/
+/******************************************/
+
+.black-op-50 {
+  background-color: rgba(var(--color-rgb-black), 0.5);
+}
+
+.hero-bg-img {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("/img/img-hero.avif");
+  background-position: center 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  height: 96dvh;
+}
+
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.container {
+  max-width: clamp(200px, 80vw, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/***********************************/
+/************* FRISE ***************/
+/***********************************/
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
+  height: 4vh;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track span {
+  flex-shrink: 0;
+  padding-right: 0.2rem;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/**********************************/
+/************* MENU ***************/
+/**********************************/
+
+.menu-img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.menu-item {
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+/*************************************/
+/************* KARAOKE ***************/
+/*************************************/
+
+.free-karaoke {
+  background: linear-gradient(
+    160deg,
+    var(--color-pink) 50%,
+    var(--color-white) 100%,
+    transparent 70.71%
+  );
+}
+
+.karaoke-bg-img {
+  background-image: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 1) 60%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("/img/karaoke-bg.avif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  height: 100dvh;
+}
+
+/**********************************/
+/************* AVIS ***************/
+/**********************************/
+.avis-gradient {
+  background: linear-gradient(
+    190deg,
+    var(--color-purple) 0%,
+    var(--color-dark-purple) 100%,
+    transparent 70.71%
+  );
+}
+
+/**********************************/
+/************* JOIN ***************/
+/**********************************/
+.join-bg-img {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("/img/join.avif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  height: 100dvh;
+}
+.white-op-75 {
+  background-color: rgba(var(--color-rgb-white), 0.75);
+}
+
+/****************************************/
+/************* ANIMATIONS ***************/
+/****************************************/
+
+@keyframes fade-blur {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-fade-blur {
+  animation: fade-blur 0.9s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+.delay-2 {
+  animation-delay: 1s;
+}
+.delay-3 {
+  animation-delay: 1.5s;
+}
+.delay-4 {
+  animation-delay: 2s;
+}
+.delay-5 {
+  animation-delay: 2.5s;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.animate-on-scroll.visible {
+  animation: fade-blur 0.9s forwards;
+}
