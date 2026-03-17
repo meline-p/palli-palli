@@ -14,4 +14,6 @@ Palli Palli est un restaurant qui propose de la street food coréenne avec soir�
 
 Cliquez sur le GIF pour voir la démo complète
 
-[![Démo](https://meline-p.github.io/palli-palli/demo/palli-palli.gif)](https://youtu.be/xD6E16xa0Ww)
+[Voir la démo complète](https://meline-p.github.io/palli-palli/)
+
+![Démo](https://meline-p.github.io/palli-palli/demo/palli-palli.gif)
