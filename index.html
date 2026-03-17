@@ -3,8 +3,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Palli Palli est un restaurant qui propose de la street food coréenne avec soirées karaoké et DJ pour une ambiance festive."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Palli Palli</title>
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Palli Palli" />
+    <meta
+      property="og:title"
+      content="Palli Palli - Street Food & Hongdae Vibes"
+    />
+    <meta
+      property="og:description"
+      content="L'énergie électrique de Séoul dans ton assiette. Rapide, piquant, et 100% fun."
+    />
+    <meta
+      property="og:image"
+      content="https://meline-p.github.io/palli-palli/img/palli-palli.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://meline-p.github.io/palli-palli/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Palli Palli - Street Food & Hongdae Vibes"
+    />
+    <meta
+      name="twitter:description"
+      content="L'énergie électrique de Séoul dans ton assiette. Rapide, piquant, et 100% fun."
+    />
+    <meta
+      name="twitter:image"
+      content="https://meline-p.github.io/palli-palli/img/palli-palli.png"
+    />
+    <meta
+      name="twitter:url"
+      content="https://meline-p.github.io/palli-palli/"
+    />
+
+    <!-- CSS - Tailwind - FontAwesome -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -14,6 +56,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -144,7 +188,8 @@
             <div>
               <img
                 class="menu-img h-80 lg:h-50 w-full"
-                src="/img/chicken.avif"
+                src="img/chicken.avif"
+                alt="K-POP Chicken"
               />
             </div>
             <div class="pt-2">
@@ -167,7 +212,8 @@
             <div>
               <img
                 class="menu-img h-80 lg:h-50 w-full"
-                src="/img/bibimbap.avif"
+                src="img/bibimbap.avif"
+                alt="Neon Bibimbap"
               />
             </div>
             <div class="pt-2">
@@ -190,7 +236,8 @@
             <div>
               <img
                 class="menu-img h-80 lg:h-50 w-full"
-                src="/img/tteokbokki.avif"
+                src="img/tteokbokki.avif"
+                alt="Spicy Drama"
               />
             </div>
             <div class="pt-2">
@@ -222,6 +269,7 @@
             <img
               class="animate-on-scroll w-full rounded-2xl box-purple-neon-100"
               src="img/karaoke.avif"
+              alt="Karaoké gratuit"
             />
             <div
               class="animate-on-scroll free-karaoke absolute top-[-20px] left-1/2 transform -translate-x-1/2 lg:bottom-[-20px] lg:right-[-20px] lg:top-auto lg:left-auto lg:translate-x-0 rounded-full w-fit px-6 py-2 font-bold italic whitespace-nowrap"

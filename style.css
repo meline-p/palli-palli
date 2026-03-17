@@ -132,7 +132,7 @@ p {
       rgba(0, 0, 0, 1) 0%,
       rgba(0, 0, 0, 0) 100%
     ),
-    url("/img/img-hero.avif");
+    url("img/img-hero.avif");
   background-position: center 80%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -222,7 +222,7 @@ p {
       rgba(0, 0, 0, 1) 60%,
       rgba(0, 0, 0, 0) 100%
     ),
-    url("/img/karaoke-bg.avif");
+    url("img/karaoke-bg.avif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -251,7 +251,7 @@ p {
       rgba(0, 0, 0, 1) 10%,
       rgba(0, 0, 0, 0) 100%
     ),
-    url("/img/join.avif");
+    url("img/join.avif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
