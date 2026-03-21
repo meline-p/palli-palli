@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
@@ -47,31 +47,68 @@
     />
 
     <!-- CSS - Tailwind - FontAwesome -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+      defer
+    ></script>
     <link
-      rel="stylesheet"
+      rel="preload"
+      href="style.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="style.css" /></noscript>
+    <link
+      rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </noscript>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap"
       rel="stylesheet"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
   </head>
 
   <body class="snap-y snap-mandatory">
-    <section class="hero-bg-img snap-start">
+    <!-- NAVIGATION -->
+    <section class="hero-bg-img snap-start" role="banner">
       <div class="container">
         <header class="animate-fade-blur fixed top-0 left-0 w-full z-50">
           <div
@@ -83,7 +120,7 @@
               <div
                 class="flex flex-col lg:flex-row items-start lg:items-center gap-2"
               >
-                <a href="#">
+                <a href="#" aria-label="Palli Palli">
                   <h2
                     class="text-white italic font-bold text-pink-neon-60 font-brand-clamp whitespace-nowrap"
                   >
@@ -99,21 +136,29 @@
               </div>
 
               <div class="text-right md:hidden">
-                <a href="#" class="pink-btn w-fit">
+                <a href="#" aria-label="Réserver" class="pink-btn w-fit">
                   <i class="fa-solid fa-calendar"></i>
                 </a>
               </div>
 
               <div class="flex items-center md:gap-4 gap-0 hidden md:flex">
-                <a href="#menu" class="text-xl text-white hover:text-green"
+                <a
+                  href="#menu"
+                  aria-label="Menu Pop"
+                  class="text-xl text-white hover:text-green"
                   >MENU POP</a
                 >
-                <a href="#karaoke" class="text-xl text-white hover:text-green"
+                <a
+                  href="#karaoke"
+                  aria-label="Karaoké"
+                  class="text-xl text-white hover:text-green"
                   >KARAOKE</a
                 >
 
                 <div class="text-center">
-                  <a href="#" class="pink-btn">RESERVER</a>
+                  <a href="#" aria-label="Réserver" class="pink-btn"
+                    >RESERVER</a
+                  >
                 </div>
               </div>
             </div>
@@ -137,6 +182,7 @@
           </div>
           <div class="pt-8 flex gap-4 items-center flex-col md:flex-row">
             <a
+              aria-label="Réserver maintenant"
               href="#"
               class="opacity-0 animate-fade-blur delay-3 flex-1 w-full md:w-auto pink-btn text-center whitespace-nowrap"
             >
@@ -144,6 +190,7 @@
             </a>
             <a
               href="#menu"
+              aria-label="Voir le menu"
               class="opacity-0 animate-fade-blur delay-4 flex-1 w-full md:w-auto green-outline-btn text-center hover:bg-green"
             >
               VOIR LE MENU
@@ -153,7 +200,8 @@
       </div>
     </section>
 
-    <div class="marquee bg-green flex items-center">
+    <!-- FRISE -->
+    <div class="marquee bg-green flex items-center" role="complementary">
       <div class="marquee-track text-2xl font-bold italic flex">
         <span class="mr-2">
           KIMCHI | BULGOGI | BIBIMBAP | JAPCHAE | TTEOKBOKKI | KIMCHI JJIGAE |
@@ -166,280 +214,296 @@
       </div>
     </div>
 
-    <section id="menu" class="scroll-section menu bg-black lg:pt-0 pt-30">
-      <div
-        class="container text-white flex flex-col justify-center items-center my-auto py-12 min-h-dvh"
-      >
-        <div>
-          <h2
-            class="animate-on-scroll italic font-bold font-h2-clamp text-green-neon-60 text-center"
-          >
-            THE <span class="text-green">PLAYLIST</span> MENU
-          </h2>
-          <p class="animate-on-scroll delay-1 text-center">
-            Des plats qui font plus de bruit que ton groupe préféré.
-          </p>
-        </div>
-
-        <div class="my-8 flex justify-center lg:flex-nowrap flex-wrap gap-6">
-          <div
-            class="transition-transform duration-300 ease-in-out hover:-rotate-3 hover:-translate-y-1 hover:scale-105 animate-on-scroll w-full p-4 box-green-neon-100 rounded-2xl"
-          >
-            <div>
-              <img
-                class="menu-img h-80 lg:h-50 w-full"
-                src="img/chicken.avif"
-                alt="K-POP Chicken"
-              />
-            </div>
-            <div class="pt-2">
-              <h3 class="font-bold italic font-h3-clamp uppercase">
-                K-POP CHICKEN
-              </h3>
-              <p>
-                Poulet ultra-croustillant, sauce secrète "Sweet & Fire". Comme
-                dans les rues de Hongdae.
-              </p>
-            </div>
-            <div class="flex justify-end items-end pt-2">
-              <p class="font-menu-price-clamp font-bold text-green">14,00€</p>
-            </div>
-          </div>
-
-          <div
-            class="transition-transform duration-300 ease-in-out hover:-rotate-3 hover:-translate-y-1 hover:scale-105 animate-on-scroll w-full p-4 box-green-neon-100 rounded-2xl"
-          >
-            <div>
-              <img
-                class="menu-img h-80 lg:h-50 w-full"
-                src="img/bibimbap.avif"
-                alt="Neon Bibimbap"
-              />
-            </div>
-            <div class="pt-2">
-              <h3 class="font-bold italic font-h3-clamp uppercase">
-                Neon Bibimbap
-              </h3>
-              <p>
-                Un mix explosif de couleurs et de textures. On mélange tout et
-                on profite du show.
-              </p>
-            </div>
-            <div class="flex justify-end items-end pt-2">
-              <p class="font-menu-price-clamp font-bold text-green">16,50€</p>
-            </div>
-          </div>
-
-          <div
-            class="transition-transform duration-300 ease-in-out hover:-rotate-3 hover:-translate-y-1 hover:scale-105 animate-on-scroll w-full p-4 box-green-neon-100 rounded-2xl"
-          >
-            <div>
-              <img
-                class="menu-img h-80 lg:h-50 w-full"
-                src="img/tteokbokki.avif"
-                alt="Spicy Drama"
-              />
-            </div>
-            <div class="pt-2">
-              <h3 class="font-bold italic font-h3-clamp uppercase">
-                Spicy Drama
-              </h3>
-              <p>
-                Tteokbokki fondants dans une sauce pimentée qui va te faire
-                pleurer (comme devant le final d'un drama).
-              </p>
-            </div>
-            <div class="flex justify-end items-end pt-2">
-              <p class="font-menu-price-clamp font-bold text-green">12,00€</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="karaoke"
-      class="scroll-section karaoke bg-black snap-start lg:pt-0 pt-30"
-    >
-      <div class="karaoke-bg-img">
+    <main>
+      <!-- MENU -->
+      <section id="menu" class="scroll-section menu bg-black lg:pt-0 pt-30">
         <div
-          class="container text-white flex lg:flex-row flex-col justify-center items-center gap-12 lg:py-0 py-8 min-h-dvh"
+          class="container text-white flex flex-col justify-center items-center my-auto py-12 min-h-dvh"
         >
-          <div class="relative order-last lg:order-first">
-            <img
-              class="animate-on-scroll w-full rounded-2xl box-purple-neon-100"
-              src="img/karaoke.avif"
-              alt="Karaoké gratuit"
-            />
-            <div
-              class="animate-on-scroll free-karaoke absolute top-[-20px] left-1/2 transform -translate-x-1/2 lg:bottom-[-20px] lg:right-[-20px] lg:top-auto lg:left-auto lg:translate-x-0 rounded-full w-fit px-6 py-2 font-bold italic whitespace-nowrap"
-            >
-              FREE KARAOKE
-            </div>
-          </div>
-          <div
-            class="flex flex-col justify-center lg:items-baseline items-center order-first lg:order-last"
-          >
+          <div>
             <h2
-              class="animate-on-scroll uppercase font-bold italic text-pink-neon-60 font-h2-clamp pb-8 text-center lg:text-left"
+              class="animate-on-scroll italic font-bold font-h2-clamp text-green-neon-60 text-center"
             >
-              VIBE COMME à <span class="text-pink">GANGNAM</span>
+              THE <span class="text-green">PLAYLIST</span> MENU
             </h2>
-            <p class="animate-on-scroll text-center lg:text-left">
-              <span class="font-bold italic">PALLI PALLI</span> n’est pas qu’un
-              restaurant : c’est le QG de la communauté coréenne à Paris. Une
-              playlist sélectionnée par des DJs de Séoul, des écrans diffusant
-              tes clips favoris et des cocktails au Soju qui pétillent.
+            <p class="animate-on-scroll delay-1 text-center">
+              Des plats qui font plus de bruit que ton groupe préféré.
             </p>
-            <div class="pt-8">
-              <p class="animate-on-scroll">
-                <i class="fa-solid fa-check text-green mr-2"></i>PLAYLIST K-POP
-                24/7
-              </p>
-              <p class="animate-on-scroll">
-                <i class="fa-solid fa-check text-green mr-2"></i>DÉCO
-                INSTAGRAMMABLE
-              </p>
-              <p class="animate-on-scroll">
-                <i class="fa-solid fa-check text-green mr-2"></i>SOIRÉES
-                SPÉCIALES KDRAMA
-              </p>
+          </div>
+
+          <div class="my-8 flex justify-center lg:flex-nowrap flex-wrap gap-6">
+            <div
+              class="transition-transform duration-300 ease-in-out hover:-rotate-3 hover:-translate-y-1 hover:scale-105 animate-on-scroll w-full p-4 box-green-neon-100 rounded-2xl"
+            >
+              <div>
+                <img
+                  class="menu-img h-80 lg:h-50 w-full aspect-[2/3]"
+                  src="img/chicken.avif"
+                  alt="K-POP Chicken"
+                  width="687px"
+                  height="1031px"
+                />
+              </div>
+              <div class="pt-2">
+                <h3 class="font-bold italic font-h3-clamp uppercase">
+                  K-POP CHICKEN
+                </h3>
+                <p>
+                  Poulet ultra-croustillant, sauce secrète "Sweet & Fire". Comme
+                  dans les rues de Hongdae.
+                </p>
+              </div>
+              <div class="flex justify-end items-end pt-2">
+                <p class="font-menu-price-clamp font-bold text-green">14,00€</p>
+              </div>
+            </div>
+
+            <div
+              class="transition-transform duration-300 ease-in-out hover:-rotate-3 hover:-translate-y-1 hover:scale-105 animate-on-scroll w-full p-4 box-green-neon-100 rounded-2xl"
+            >
+              <div>
+                <img
+                  class="menu-img h-80 lg:h-50 w-full aspect-[4/5]"
+                  src="img/bibimbap.avif"
+                  alt="Neon Bibimbap"
+                  width="765px"
+                  height="956px"
+                />
+              </div>
+              <div class="pt-2">
+                <h3 class="font-bold italic font-h3-clamp uppercase">
+                  Neon Bibimbap
+                </h3>
+                <p>
+                  Un mix explosif de couleurs et de textures. On mélange tout et
+                  on profite du show.
+                </p>
+              </div>
+              <div class="flex justify-end items-end pt-2">
+                <p class="font-menu-price-clamp font-bold text-green">16,50€</p>
+              </div>
+            </div>
+
+            <div
+              class="transition-transform duration-300 ease-in-out hover:-rotate-3 hover:-translate-y-1 hover:scale-105 animate-on-scroll w-full p-4 box-green-neon-100 rounded-2xl"
+            >
+              <div>
+                <img
+                  class="menu-img h-80 lg:h-50 w-full aspect-[4/5]"
+                  src="img/tteokbokki.avif"
+                  alt="Spicy Drama"
+                  width="764px"
+                  height="955px"
+                />
+              </div>
+              <div class="pt-2">
+                <h3 class="font-bold italic font-h3-clamp uppercase">
+                  Spicy Drama
+                </h3>
+                <p>
+                  Tteokbokki fondants dans une sauce pimentée qui va te faire
+                  pleurer (comme devant le final d'un drama).
+                </p>
+              </div>
+              <div class="flex justify-end items-end pt-2">
+                <p class="font-menu-price-clamp font-bold text-green">12,00€</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="scroll-section bg-black snap-start lg:pt-0 pt-30">
-      <div
-        class="container text-white flex flex-col justify-center items-baseline lg:py-0 py-8 min-h-dvh"
+      <!-- KARAOKE -->
+      <section
+        id="karaoke"
+        class="scroll-section karaoke bg-black snap-start lg:pt-0 pt-30"
       >
-        <div class="text-center mx-auto">
-          <h2
-            class="animate-on-scroll uppercase font-bold italic text-green-neon-60 font-h2-clamp mb-20"
-          >
-            <span class="text-green">AVIS</span> CLIENT
-          </h2>
-        </div>
-
-        <div class="flex justify-center flex-wrap items-center gap-8">
+        <div class="karaoke-bg-img">
           <div
-            class="animate-on-scroll relative inline-block basis-full sm:basis-1/2 lg:basis-1/4"
+            class="container text-white flex lg:flex-row flex-col justify-center items-center gap-12 lg:py-0 py-8 min-h-dvh"
           >
-            <div
-              class="absolute inset-0 border-4 border-green rounded-2xl rotate-4"
-            ></div>
-
-            <div
-              class="avis-gradient p-4 rounded-2xl relative z-10 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:rotate-4"
-            >
-              <div class="flex justify-end pb-4">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <div>
-                <p>
-                  Super ambiance qui rappelle Hongdae ! Les plats coréens sont
-                  délicieux et le karaoké gratuit met vraiment l’ambiance.
-                  Parfait pour une soirée entre amis.
-                </p>
-              </div>
-              <div class="flex justify-end">
-                <p class="font-bold">Lucas</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="animate-on-scroll relative inline-block basis-full sm:basis-1/2 lg:basis-1/4"
-          >
-            <div
-              class="absolute inset-0 border-4 border-green rounded-2xl rotate-4"
-            ></div>
-
-            <div
-              class="avis-gradient p-4 rounded-2xl relative z-10 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:rotate-4"
-            >
-              <div class="flex justify-end pb-4">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <div>
-                <p>
-                  Très bon restaurant coréen avec une ambiance fun et festive.
-                  Les spécialités sont authentiques et le karaoké est un vrai
-                  plus !
-                </p>
-              </div>
-              <div class="flex justify-end">
-                <p class="font-bold">Camille</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="animate-on-scroll relative inline-block basis-full sm:basis-1/2 lg:basis-1/4"
-          >
-            <div
-              class="absolute inset-0 border-4 border-green rounded-2xl rotate-4"
-            ></div>
-
-            <div
-              class="avis-gradient p-4 rounded-2xl relative z-10 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:rotate-4"
-            >
-              <div class="flex justify-end pb-4">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <div>
-                <p>
-                  On mange très bien et l’ambiance est géniale. Entre la
-                  musique, les plats coréens et le karaoké, on passe un super
-                  moment. Je recommande !
-                </p>
-              </div>
-              <div class="flex justify-end">
-                <p class="font-bold">Enzo</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="scroll-section join bg-black snap-start lg:pt-0 pt-30">
-      <div class="join-bg-img">
-        <div
-          class="container flex flex-col justify-center items-center lg:py-0 py-8 min-h-dvh"
-        >
-          <div class="animate-on-scroll white-op-75 md:p-16 p-8 rounded-2xl">
-            <div class="text-black text-center mx-auto">
-              <h2
-                class="animate-on-scroll text-purple-neon-60 uppercase font-bold italic font-h2-clamp mb-4"
+            <div class="relative order-last lg:order-first">
+              <img
+                class="animate-on-scroll w-full rounded-2xl box-purple-neon-100 aspect-[3/2]"
+                src="img/karaoke.avif"
+                alt="Karaoké gratuit"
+                width="1469px"
+                height="981px"
+              />
+              <div
+                class="animate-on-scroll free-karaoke absolute top-[-20px] left-1/2 transform -translate-x-1/2 lg:bottom-[-20px] lg:right-[-20px] lg:top-auto lg:left-auto lg:translate-x-0 rounded-full w-fit px-6 py-2 font-bold italic whitespace-nowrap"
               >
-                JOIN THE SQUAD
-              </h2>
-              <p class="animate-on-scroll">
-                Attention : On est souvent complet, comme un concert de BTS.
-              </p>
+                FREE KARAOKE
+              </div>
             </div>
-            <div class="animate-on-scroll mt-12 text-center mx-auto">
-              <a href="#" class="pink-btn">RESERVER</a>
+            <div
+              class="flex flex-col justify-center lg:items-baseline items-center order-first lg:order-last"
+            >
+              <h2
+                class="animate-on-scroll uppercase font-bold italic text-pink-neon-60 font-h2-clamp pb-8 text-center lg:text-left"
+              >
+                VIBE COMME à <span class="text-pink">GANGNAM</span>
+              </h2>
+              <p class="animate-on-scroll text-center lg:text-left">
+                <span class="font-bold italic">PALLI PALLI</span> n’est pas
+                qu’un restaurant : c’est le QG de la communauté coréenne à
+                Paris. Une playlist sélectionnée par des DJs de Séoul, des
+                écrans diffusant tes clips favoris et des cocktails au Soju qui
+                pétillent.
+              </p>
+              <div class="pt-8">
+                <p class="animate-on-scroll">
+                  <i class="fa-solid fa-check text-green mr-2"></i>PLAYLIST
+                  K-POP 24/7
+                </p>
+                <p class="animate-on-scroll">
+                  <i class="fa-solid fa-check text-green mr-2"></i>DÉCO
+                  INSTAGRAMMABLE
+                </p>
+                <p class="animate-on-scroll">
+                  <i class="fa-solid fa-check text-green mr-2"></i>SOIRÉES
+                  SPÉCIALES KDRAMA
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- AVIS -->
+      <section class="scroll-section bg-black snap-start lg:pt-0 pt-30">
+        <div
+          class="container text-white flex flex-col justify-center items-baseline lg:py-0 py-8 min-h-dvh"
+        >
+          <div class="text-center mx-auto">
+            <h2
+              class="animate-on-scroll uppercase font-bold italic text-green-neon-60 font-h2-clamp mb-20"
+            >
+              <span class="text-green">AVIS</span> CLIENT
+            </h2>
+          </div>
+
+          <div class="flex justify-center flex-wrap items-center gap-8">
+            <div
+              class="animate-on-scroll relative inline-block basis-full sm:basis-1/2 lg:basis-1/4"
+            >
+              <div
+                class="absolute inset-0 border-4 border-green rounded-2xl rotate-4"
+              ></div>
+
+              <div
+                class="avis-gradient p-4 rounded-2xl relative z-10 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:rotate-4"
+              >
+                <div class="flex justify-end pb-4">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                  <p>
+                    Super ambiance qui rappelle Hongdae ! Les plats coréens sont
+                    délicieux et le karaoké gratuit met vraiment l’ambiance.
+                    Parfait pour une soirée entre amis.
+                  </p>
+                </div>
+                <div class="flex justify-end">
+                  <p class="font-bold">Lucas</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="animate-on-scroll relative inline-block basis-full sm:basis-1/2 lg:basis-1/4"
+            >
+              <div
+                class="absolute inset-0 border-4 border-green rounded-2xl rotate-4"
+              ></div>
+
+              <div
+                class="avis-gradient p-4 rounded-2xl relative z-10 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:rotate-4"
+              >
+                <div class="flex justify-end pb-4">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                  <p>
+                    Très bon restaurant coréen avec une ambiance fun et festive.
+                    Les spécialités sont authentiques et le karaoké est un vrai
+                    plus !
+                  </p>
+                </div>
+                <div class="flex justify-end">
+                  <p class="font-bold">Camille</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="animate-on-scroll relative inline-block basis-full sm:basis-1/2 lg:basis-1/4"
+            >
+              <div
+                class="absolute inset-0 border-4 border-green rounded-2xl rotate-4"
+              ></div>
+
+              <div
+                class="avis-gradient p-4 rounded-2xl relative z-10 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:scale-105 hover:rotate-4"
+              >
+                <div class="flex justify-end pb-4">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                  <p>
+                    On mange très bien et l’ambiance est géniale. Entre la
+                    musique, les plats coréens et le karaoké, on passe un super
+                    moment. Je recommande !
+                  </p>
+                </div>
+                <div class="flex justify-end">
+                  <p class="font-bold">Enzo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="scroll-section join bg-black snap-start lg:pt-0 pt-30">
+        <div class="join-bg-img">
+          <div
+            class="container flex flex-col justify-center items-center lg:py-0 py-8 min-h-dvh"
+          >
+            <div class="animate-on-scroll white-op-75 md:p-16 p-8 rounded-2xl">
+              <div class="text-black text-center mx-auto">
+                <h2
+                  class="animate-on-scroll text-purple-neon-60 uppercase font-bold italic font-h2-clamp mb-4"
+                >
+                  JOIN THE SQUAD
+                </h2>
+                <p class="animate-on-scroll">
+                  Attention : On est souvent complet, comme un concert de BTS.
+                </p>
+              </div>
+              <div class="animate-on-scroll mt-12 text-center mx-auto">
+                <a href="#" class="pink-btn" aria-label="Réserver">RESERVER</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
     <section class="scroll-section snap-start">
       <footer class="border-pink border-t-4 bg-black">
         <div
@@ -466,9 +530,24 @@
           <div
             class="text-white flex justify-center items-center gap-4 text-3xl"
           >
-            <a class="animate-on-scroll hover:text-pink" href="#">IG</a>
-            <a class="animate-on-scroll hover:text-pink" href="#">TK</a>
-            <a class="animate-on-scroll hover:text-pink" href="#">YT</a>
+            <a
+              class="animate-on-scroll hover:text-pink"
+              aria-label="Instagram"
+              href="#"
+              >IG</a
+            >
+            <a
+              class="animate-on-scroll hover:text-pink"
+              aria-label="TikTok"
+              href="#"
+              >TK</a
+            >
+            <a
+              class="animate-on-scroll hover:text-pink"
+              aria-label="Youtube"
+              href="#"
+              >YT</a
+            >
           </div>
         </div>
       </footer>
